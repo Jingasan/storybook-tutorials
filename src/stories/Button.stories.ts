@@ -73,6 +73,7 @@ export const Warning: Story = {
     label: "Delete now", // 表示テキスト
     backgroundColor: "red", // ボタンカラー
     onClick() {
+      // クリック時のコールバック関数
       console.log("Pushed");
     },
   },
