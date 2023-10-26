@@ -1,18 +1,26 @@
 import type { Meta, StoryObj } from "@storybook/react";
-
+// 対象とするUIコンポーネント
 import { Button } from "../components/Button";
 
-// More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
+/**
+ * ストーリーのセットアップ
+ * https://storybook.js.org/docs/react/writing-stories/introduction#default-export
+ */
 const meta = {
-  title: "Example/Button",
+  // タイトル
+  title: "SampleStories/main/Button",
+  // UIコンポーネントの指定
   component: Button,
   parameters: {
-    // Optional parameter to center the component in the Canvas. More info: https://storybook.js.org/docs/react/configure/story-layout
+    // [Option] Canvas上でのUIコンポーネントの配置
+    // https://storybook.js.org/docs/react/configure/story-layout
     layout: "centered",
   },
-  // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/react/writing-docs/autodocs
+  // Docsの自動生成の設定
+  // https://storybook.js.org/docs/react/writing-docs/autodocs
   tags: ["autodocs"],
-  // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
+  // UIコンポーネントのプロパティのコントロールの表示
+  // https://storybook.js.org/docs/react/api/argtypes
   argTypes: {
     backgroundColor: { control: "color" },
   },
@@ -21,38 +29,51 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-// More on writing stories with args: https://storybook.js.org/docs/react/writing-stories/args
+/**
+ * ストーリーの定義
+ * https://storybook.js.org/docs/react/writing-stories/args
+ */
+
+// ストーリー１
 export const Primary: Story = {
   args: {
-    primary: true,
-    label: "Button",
+    primary: true, // 表示モード
+    label: "Button", // 表示テキスト
   },
 };
 
+// ストーリー２
 export const Secondary: Story = {
   args: {
-    label: "Button",
+    label: "Button", // 表示テキスト
   },
 };
 
+// ストーリー３
 export const Large: Story = {
   args: {
-    size: "large",
-    label: "Button",
+    size: "large", // ボタンサイズ
+    label: "Button", // 表示テキスト
   },
 };
 
+// ストーリー４
 export const Small: Story = {
   args: {
-    size: "small",
-    label: "Button",
+    size: "small", // ボタンサイズ
+    label: "Button", // 表示テキスト
   },
 };
 
+// ストーリー５
 export const Warning: Story = {
   args: {
-    primary: true,
-    label: "Delete now",
-    backgroundColor: "red",
+    primary: true, // ボタンサイズ
+    size: "large", // ボタンサイズ
+    label: "Delete now", // 表示テキスト
+    backgroundColor: "red", // ボタンカラー
+    onClick() {
+      console.log("Pushed");
+    },
   },
 };

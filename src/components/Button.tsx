@@ -17,15 +17,15 @@ export const Button = ({
   label,
   ...props
 }: ButtonProps) => {
-  const mode = primary
-    ? "storybook-button--primary"
-    : "storybook-button--secondary";
+  const mode = primary ? "primary" : "secondary";
   return (
     <button
       type="button"
-      className={["storybook-button", `storybook-button--${size}`, mode].join(
-        " "
-      )}
+      className={[
+        "button-theme",
+        `button-size-${size}`,
+        `button-mode-${mode}`,
+      ].join(" ")}
       style={{ backgroundColor }}
       {...props}
     >
