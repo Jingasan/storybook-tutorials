@@ -3,10 +3,10 @@ import type { Meta, StoryObj } from "@storybook/react";
 import { Button } from "../components/Button";
 
 /**
- * ストーリーのセットアップ
- * https://storybook.js.org/docs/react/writing-stories/introduction#default-export
+ * ボタンUIのストーリー
  */
 const meta = {
+  // https://storybook.js.org/docs/react/writing-stories/introduction#default-export
   // タイトル
   title: "SampleStories/main/Button",
   // UIコンポーネントの指定
@@ -30,26 +30,28 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 /**
- * ストーリーの定義
- * https://storybook.js.org/docs/react/writing-stories/args
+ * ストーリー１：Primaryモード
  */
-
-// ストーリー１
 export const Primary: Story = {
+  // https://storybook.js.org/docs/react/writing-stories/args
   args: {
     primary: true, // 表示モード
     label: "Button", // 表示テキスト
   },
 };
 
-// ストーリー２
+/**
+ * ストーリー２：Secondaryモード
+ */
 export const Secondary: Story = {
   args: {
     label: "Button", // 表示テキスト
   },
 };
 
-// ストーリー３
+/**
+ * ストーリー３：Large サイズ
+ */
 export const Large: Story = {
   args: {
     size: "large", // ボタンサイズ
@@ -57,7 +59,9 @@ export const Large: Story = {
   },
 };
 
-// ストーリー４
+/**
+ * ストーリー４：Small サイズ
+ */
 export const Small: Story = {
   args: {
     size: "small", // ボタンサイズ
@@ -65,13 +69,25 @@ export const Small: Story = {
   },
 };
 
-// ストーリー５
-export const Warning: Story = {
+/**
+ * ストーリー５：ボタンカラー
+ */
+export const Color: Story = {
   args: {
     primary: true, // ボタンサイズ
     size: "large", // ボタンサイズ
     label: "Delete now", // 表示テキスト
     backgroundColor: "red", // ボタンカラー
+  },
+};
+
+/**
+ * ストーリー６：クリック時のコールバック関数の登録
+ */
+export const OnClickCallback: Story = {
+  args: {
+    primary: true, // ボタンサイズ
+    label: "Click", // 表示テキスト
     onClick() {
       // クリック時のコールバック関数
       console.log("Pushed");
